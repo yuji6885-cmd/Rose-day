@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Rose Day ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #5a0f2e;
+      overflow: hidden;
+    }
+    .container {
+      display: flex;
+      width: 1000vw;
+      height: 100vh;
+      transition: transform 0.8s ease;
+    }
+    section {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .card {
+      max-width: 750px;
+      background: rgba(255,255,255,0.85);
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      animation: fadeUp 1.2s ease both;
+    }
+    h1 { font-size: 2.4rem; margin-bottom: 20px; }
+    p { font-size: 1.1rem; line-height: 1.8; }
+    .photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+      object-fit: cover;
+      margin: 20px auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      z-index: 1000;
+    }
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 25px;
+      background: #ff5c8a;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    button:hover { background: #e6005c; }
+    .rose {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+      z-index: 0;
+    }
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+    .popup-content {
+      background: white;
+      padding: 40px;
+      border-radius: 30px;
+      text-align: center;
+      max-width: 400px;
+      animation: fadeUp 0.8s ease;
+    }
+    @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+      .night {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #ffd6e8;
+    }
+    .night .card { background: rgba(0,0,0,0.6); }
+    .toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      background: #ff5c8a;
+      color: white;
+      cursor: pointer;
+      z-index: 3000;
+    }
+  </style>
+</head>
+<body>
+<div class="toggle" onclick="toggleNight()">🌙 Night Mode</div><audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio><div class="container" id="container"><section><div class="card"><h1>🌹 Happy Rose Day My Girl 🌹</h1><img src="photo1.jpg" class="photo"><p>Today is Rose Day, but every day feels like a rose because of you. You walked into my life and made everything softer, warmer, and brighter.</p></div></section><section><div class="card"><h1>🌸 You Are My Favorite Feeling</h1><img src="photo2.jpg" class="photo"><p>My girl, you are my peace, my smile, my comfort. Loving you feels natural, like breathing.</p></div></section><section><div class="card"><h1>🌹 A Rose for Every Smile</h1><img src="photo3.jpg" class="photo"><p>If I could give you a rose for every smile, the world would turn into a garden.</p></div></section><section><div class="card"><h1>🌸 My Safe Place</h1><img src="photo4.jpg" class="photo"><p>With you, I feel safe to be myself. You understand me without words.</p></div></section><section><div class="card"><h1>🌹 My Wife in My Heart</h1><img src="photo5.jpg" class="photo"><p>I call you my wife because my heart chose you as home.</p></div></section><section><div class="card"><h1>🌸 Through Every Season</h1><img src="photo6.jpg" class="photo"><p>No matter the season or situation, I want to stand beside you.</p></div></section><section><div class="card"><h1>🌹 Thank You for Being You</h1><img src="photo7.jpg" class="photo"><p>Thank you for your love, patience, and for choosing me.</p></div></section><section><div class="card"><h1>🌸 A Future With You</h1><img src="photo8.jpg" class="photo"><p>Every dream I see has you in it, my girl, my wife.</p></div></section><section><div class="card"><h1>🌹 Forever Kind of Love</h1><img src="photo9.jpg" class="photo"><p>This love grows deeper with time, just like a rose that keeps blooming.</p></div></section><section><div class="card"><h1>🌸 Always Yours</h1><img src="photo10.jpg" class="photo"><p>Happy Rose Day my girl, my wife. You are my forever smile, my calm, my happiness. Every heartbeat of mine whispers your name, and every dream I see has you in it. Loving you is the most beautiful thing my heart has ever learned.</p><br><button onclick="openPopup()">💖 A Letter For You 💖</button></div></section></div><div class="controls">
+  <button onclick="prev()">⬅ Prev</button>
+  <button onclick="next()">Next ➡</button>
+</div><div class="popup" id="popup">
+  <div class="popup-content">
+    <h1>💌 My Love Letter 💌</h1>
+    <p>My girl, my wife… you are not just someone I love, you are someone I choose every single day. In your smile I find peace, in your voice I find home. No matter where life takes us, my heart will always walk beside yours. I don’t promise perfection, but I promise love, effort, and forever.</p>
+    <br>
+    <h3>Will you be my forever? 💍❤️</h3>
+    <button onclick="closePopup()">Always Yours</button>
+  </div>
+</div>
+</div><script>
+  let index = 0;
+  const container = document.getElementById('container');
+  function update() { container.style.transform = `translateX(-${index * 100}vw)`; }
+  function next() { if (index < 9) index++; update(); }
+  function prev() { if (index > 0) index--; update(); }
+  function openPopup() { document.getElementById('popup').style.display = 'flex'; }
+  function toggleNight() { document.body.classList.toggle('night'); }
+
+  function closePopup() { document.getElementById('popup').style.display = 'none'; }
+
+  const roses = ['🌹','🌸','❤️'];
+  for (let i = 0; i < 30; i++) {
+    const r = document.createElement('div');
+    r.className = 'rose';
+    r.innerText = roses[Math.floor(Math.random()*roses.length)];
+    r.style.left = Math.random() * 100 + 'vw';
+    r.style.animationDuration = 5 + Math.random() * 5 + 's';
+    r.style.fontSize = 18 + Math.random() * 20 + 'px';
+    document.body.appendChild(r);
+  }
+</script></body>
+</html>
